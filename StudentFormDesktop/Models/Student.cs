@@ -16,5 +16,23 @@ namespace StudentFormDesktop.Models
         public string Faculty { get; set; }
         public string Profession { get; set; }
 
+        public Student(string name, string surname, string address, string faculty, string profession)
+        {
+            Name = name;
+            Surname = surname;
+            Address = address;
+            Faculty = faculty;
+            Profession = profession;
+
+        }
+
+        public Student()
+        {
+        }
+        //public Student(string email, string address)
+        //{
+        //    Email = email;
+        //    Address = address;
+        //}
     }
 }
