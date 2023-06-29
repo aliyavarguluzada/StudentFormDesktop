@@ -48,32 +48,39 @@ namespace StudentFormDesktop.Forms
                 MessageBox.Show("The string contains a standalone number.");
                 return;
             }
-            
+
 
             //////////////////////
-            if (name.Length < 3)
+            if (name.Length < 3 || String.IsNullOrEmpty(name) == true)
             {
                 MessageBox.Show("Name is not correct");
                 return;
 
             }
 
-            if (surname.Length < 3)
+            if (surname.Length < 3 || String.IsNullOrEmpty(surname) == true)
             {
-                MessageBox.Show("Surname is not correct");
+                MessageBox.Show("Surname is not correct or you left the field empty");
                 return;
 
             }
 
 
-            if (!email.Contains("@"))
+            if (!email.Contains("@") || String.IsNullOrEmpty(email) == true)
             {
-                MessageBox.Show("Email must include @ character");
+                MessageBox.Show("Email must include @ character or you left the field empty");
+                return;
             }
 
-            if(faculty == profession)
+            if(String.IsNullOrEmpty(address) == true)
             {
-                MessageBox.Show("Faculty name cannot be same as Profession");
+                MessageBox.Show("you left the address field empty");
+                return;
+            }
+
+            if (faculty == profession || String.IsNullOrEmpty(faculty) == true || String.IsNullOrEmpty(profession) == true)
+            {
+                MessageBox.Show("Faculty name cannot be same as Profession or you left the fields empty");
                 return;
 
             }
@@ -84,7 +91,12 @@ namespace StudentFormDesktop.Forms
 
             List<Student> students = ApplicationDbContext.Students;
 
+
             int newId = 1;
+            if (students.Count != 0)
+            {
+                newId = students[students.Count - 1].Id + 1;
+            }
 
             Student student = new Student();
 
@@ -95,6 +107,7 @@ namespace StudentFormDesktop.Forms
             student.Address = address;
             student.Faculty = faculty;
             student.Profession = profession;
+            students.Add(student);
             MessageBox.Show("Register Successfull");
             this.Close();
         }

@@ -1,5 +1,6 @@
 using StudentFormDesktop.Data;
 using StudentFormDesktop.Forms;
+using StudentFormDesktop.Models;
 
 namespace StudentFormDesktop
 {
@@ -16,9 +17,15 @@ namespace StudentFormDesktop
             Register register = new Register(this);
             register.Show();
 
-            _ = ApplicationDbContext.Students;
-            int index = 1;
-            //dataGridView1.Rows.Add(ApplicationDbContext.Students[index - 1 ].Name);
+            List<Student> students = ApplicationDbContext.Students;
+            //var data = ApplicationDbContext.Students;
+
+
+            Student student = new Student();
+
+            int index = 0;
+            dataGridView1.Rows.Add(students[index].Name);
+            index++;
         }
     }
 }

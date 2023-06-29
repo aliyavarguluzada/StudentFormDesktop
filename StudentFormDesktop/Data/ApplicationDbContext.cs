@@ -24,7 +24,7 @@ namespace StudentFormDesktop.Data
             //student.Email = "aliyavarguluzada@gmail.com";
             //student.Faculty = "IT";
             //student.Profession = "Software Engineer";
-            //Students.Add(student);
+            Students.Add(student);
         }
     }
 }
