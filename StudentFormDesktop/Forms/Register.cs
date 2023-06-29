@@ -46,29 +46,27 @@ namespace StudentFormDesktop.Forms
             if (matches.Count > 0)
             {
                 MessageBox.Show("The string contains a standalone number.");
+                return;
             }
-            else
-            {
-                MessageBox.Show("The string does not contain a standalone number.");
-            }
+            
 
             //////////////////////
             if (name.Length < 3)
             {
                 MessageBox.Show("Name is not correct");
+                return;
+
             }
 
-            if(surname.Length < 3)
+            if (surname.Length < 3)
             {
                 MessageBox.Show("Surname is not correct");
+                return;
+
             }
 
-            if(int.TryParse(name, out int parsedInt) && parsedInt.ToString() == name) 
-            {
-                MessageBox.Show("Name cannot contain a number");
-            }
 
-            if(!email.Contains("@"))
+            if (!email.Contains("@"))
             {
                 MessageBox.Show("Email must include @ character");
             }
@@ -76,6 +74,8 @@ namespace StudentFormDesktop.Forms
             if(faculty == profession)
             {
                 MessageBox.Show("Faculty name cannot be same as Profession");
+                return;
+
             }
 
 
