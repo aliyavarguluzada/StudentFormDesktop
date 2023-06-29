@@ -14,9 +14,11 @@ namespace StudentFormDesktop.Forms
 {
     public partial class Register : Form
     {
-        public Register()
+        private Login MainForm;
+        public Register(Login mainform)
         {
             InitializeComponent();
+            MainForm = mainform;
         }
 
         private void Register_btn_Click(object sender, EventArgs e)
@@ -29,7 +31,20 @@ namespace StudentFormDesktop.Forms
             string profession = txbx_Profession.Text;
 
             List<Student> students = ApplicationDbContext.Students;
+            
+            int newId = 1;
+            
+            Student student = new Student();
 
+            student.Id = newId;
+            student.Name = name;
+            student.Surname = surname;
+            student.Email = email;
+            student.Address = address;
+            student.Faculty = faculty;
+            student.Profession = profession;
+
+            this.Close();
         }
     }
 }
