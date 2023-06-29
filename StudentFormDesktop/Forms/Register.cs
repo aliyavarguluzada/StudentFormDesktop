@@ -30,6 +30,38 @@ namespace StudentFormDesktop.Forms
             string faculty = txbx_Faculty.Text;
             string profession = txbx_Profession.Text;
 
+            /////////////////////////
+            // input validation
+
+            if(name.Length < 3)
+            {
+                MessageBox.Show("Name is not correct");
+            }
+
+            if(surname.Length < 3)
+            {
+                MessageBox.Show("Surname is not correct");
+            }
+
+            if(int.TryParse(name, out int parsedInt) && parsedInt.ToString() == name) 
+            {
+                MessageBox.Show("Name cannot contain a number");
+            }
+
+            if(!email.Contains("@"))
+            {
+                MessageBox.Show("Email must include @ character");
+            }
+
+            if(faculty == profession)
+            {
+                MessageBox.Show("Faculty name cannot be same as Profession");
+            }
+
+
+
+            //////
+
             List<Student> students = ApplicationDbContext.Students;
 
             int newId = 1;
@@ -43,7 +75,7 @@ namespace StudentFormDesktop.Forms
             student.Address = address;
             student.Faculty = faculty;
             student.Profession = profession;
-
+            MessageBox.Show("Register Successfull");
             this.Close();
         }
 

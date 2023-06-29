@@ -18,13 +18,13 @@ namespace StudentFormDesktop.Data
 
             Student student = new Student();
 
-            student.Name = "ali";
-            student.Surname = "guluzada";
-            student.Address = "mamed street";
-            student.Email = "aliyavarguluzada@gmail.com";
-            student.Faculty = "IT";
-            student.Profession = "Software Engineer";
-            Students.Add(student);
+            //student.Name = "ali";
+            //student.Surname = "guluzada";
+            //student.Address = "mamed street";
+            //student.Email = "aliyavarguluzada@gmail.com";
+            //student.Faculty = "IT";
+            //student.Profession = "Software Engineer";
+            //Students.Add(student);
         }
     }
 }

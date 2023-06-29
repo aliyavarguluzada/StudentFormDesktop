@@ -1,3 +1,4 @@
+using StudentFormDesktop.Data;
 using StudentFormDesktop.Forms;
 
 namespace StudentFormDesktop
@@ -14,6 +15,10 @@ namespace StudentFormDesktop
             this.Hide();
             Register register = new Register(this);
             register.Show();
+
+            _ = ApplicationDbContext.Students;
+            int index = 1;
+            //dataGridView1.Rows.Add(ApplicationDbContext.Students[index - 1 ].Name);
         }
     }
 }
