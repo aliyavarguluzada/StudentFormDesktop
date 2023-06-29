@@ -29,10 +29,10 @@ namespace StudentFormDesktop.Models
         public Student()
         {
         }
-        //public Student(string email, string address)
-        //{
-        //    Email = email;
-        //    Address = address;
-        //}
+        public Student(string email, string address)
+        {
+            Email = email;
+            Address = address;
+        }
     }
 }

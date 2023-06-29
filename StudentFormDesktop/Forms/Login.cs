@@ -20,10 +20,12 @@ namespace StudentFormDesktop
             List<Student> students = ApplicationDbContext.Students;
             //var data = ApplicationDbContext.Students;
 
+            dataGridView1.Rows.Clear();
 
             for (int i = 0; i < students.Count; i++)
             {
-                dataGridView1.Rows.Add(students[i].Name, students[i].Surname);
+                // dataGridView1.Rows.Add(students[i].Name, students[i].Surname);
+                dataGridView1.Rows.Add(students[i]);
             }
 
 
