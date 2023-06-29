@@ -17,6 +17,7 @@ namespace StudentFormDesktop.Data
             Students = new List<Student>();
 
             Student student = new Student();
+
             student.Name = "ali";
             student.Surname = "guluzada";
             student.Address = "mamed street";
