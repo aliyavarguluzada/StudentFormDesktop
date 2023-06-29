@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,7 +34,26 @@ namespace StudentFormDesktop.Forms
             /////////////////////////
             // input validation
 
-            if(name.Length < 3)
+            string pattern = @"\d+";
+
+            // Create a Regex object
+            Regex regex = new Regex(pattern);
+
+            // Use the Matches method to find all matches
+            MatchCollection matches = regex.Matches(name);
+
+            // Check if any matches were found
+            if (matches.Count > 0)
+            {
+                MessageBox.Show("The string contains a standalone number.");
+            }
+            else
+            {
+                MessageBox.Show("The string does not contain a standalone number.");
+            }
+
+            //////////////////////
+            if (name.Length < 3)
             {
                 MessageBox.Show("Name is not correct");
             }
