@@ -31,9 +31,9 @@ namespace StudentFormDesktop.Forms
             string profession = txbx_Profession.Text;
 
             List<Student> students = ApplicationDbContext.Students;
-            
+
             int newId = 1;
-            
+
             Student student = new Student();
 
             student.Id = newId;
@@ -45,6 +45,12 @@ namespace StudentFormDesktop.Forms
             student.Profession = profession;
 
             this.Close();
+        }
+
+        private void Register_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MainForm.Close();
+            MessageBox.Show("baglandi");
         }
     }
 }

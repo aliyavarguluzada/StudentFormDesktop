@@ -12,7 +12,7 @@ namespace StudentFormDesktop
         private void Register_Panel_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Register register = new Register();
+            Register register = new Register(this);
             register.Show();
         }
     }

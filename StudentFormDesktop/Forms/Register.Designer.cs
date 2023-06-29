@@ -169,6 +169,7 @@
             Controls.Add(txbx_Name);
             Name = "Register";
             Text = "Register";
+            FormClosed += Register_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }
