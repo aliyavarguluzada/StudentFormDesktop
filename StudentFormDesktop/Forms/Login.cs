@@ -21,11 +21,12 @@ namespace StudentFormDesktop
             //var data = ApplicationDbContext.Students;
 
 
-            Student student = new Student();
+            for (int i = 0; i < students.Count; i++)
+            {
+                dataGridView1.Rows.Add(students[i].Name, students[i].Surname);
+            }
 
-            int index = 0;
-            dataGridView1.Rows.Add(students[index].Name);
-            index++;
+
         }
     }
 }
