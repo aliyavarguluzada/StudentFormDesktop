@@ -20,10 +20,10 @@ namespace StudentFormDesktop.Forms
             Id = id;
             InitializeComponent();
         }
-
+        public Student updateStudent { get; set; }
         private void Update_Load(object sender, EventArgs e)
         {
-            Student updateStudent = null;
+
 
             List<Student> students = ApplicationDbContext.Students;
 
@@ -49,6 +49,17 @@ namespace StudentFormDesktop.Forms
         {
             Login login = new Login();
             login.Show();
+        }
+
+        private void Delete_btn_Click(object sender, EventArgs e)
+        {
+            updateStudent.Name = txbx_Update_Name.Text;
+            updateStudent.Surname = txbx_Update_Surname.Text;
+            updateStudent.Email = txbx_Update_Email.Text;
+            updateStudent.Address = txbx_Update_Address.Text;
+            updateStudent.Faculty = txbx_Update_Faculty.Text;
+            updateStudent.Profession = txbx_Update_Profession.Text;
+
         }
     }
 }

@@ -157,6 +157,7 @@
             Delete_btn.TabIndex = 26;
             Delete_btn.Text = "Delete";
             Delete_btn.UseVisualStyleBackColor = true;
+            Delete_btn.Click += Delete_btn_Click;
             // 
             // Update
             // 
