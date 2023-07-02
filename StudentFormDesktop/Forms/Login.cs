@@ -18,15 +18,7 @@ namespace StudentFormDesktop
             Register register = new Register(this);
             register.Show();
 
-            var data = ApplicationDbContext.Students;
 
-            dataGridView1.Rows.Clear();
-
-            for (int i = 0; i < students.Count; i++)
-            {
-                dataGridView1.Rows.Add(students[i].Name, students[i].Surname);
-                // dataGridView1.Rows.Add(students[i].Name, students[i].Surname);
-            }
 
 
         }
@@ -39,7 +31,7 @@ namespace StudentFormDesktop
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Login_Shown(object sender, EventArgs e)
@@ -52,8 +44,9 @@ namespace StudentFormDesktop
             if (this.Visible == true)
             {
                 List<Student> students = ApplicationDbContext.Students;
+                dataGridView1.Rows.Clear();
 
-                for(int i = 0;i < students.Count;i++)
+                for (int i = 0; i < students.Count; i++)
                 {
                     dataGridView1.Rows.Add(students[i].Id,
                                            students[i].Name,

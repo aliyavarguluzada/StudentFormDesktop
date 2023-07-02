@@ -115,7 +115,6 @@ namespace StudentFormDesktop.Forms
         private void Register_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainForm.Show();
-            MessageBox.Show("baglandi");
         }
     }
 }
