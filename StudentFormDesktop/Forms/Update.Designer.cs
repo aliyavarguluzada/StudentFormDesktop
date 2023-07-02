@@ -168,6 +168,7 @@
             Controls.Add(txbx_Update_Name);
             Name = "Update";
             Text = "Update";
+            Load += Update_Load;
             ResumeLayout(false);
             PerformLayout();
         }

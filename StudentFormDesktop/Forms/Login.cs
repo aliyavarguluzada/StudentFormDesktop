@@ -25,8 +25,7 @@ namespace StudentFormDesktop
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Update update = new Update();
-            update.Show();
+            ;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -70,7 +69,9 @@ namespace StudentFormDesktop
             {
                 MessageBox.Show("Database is empty");
             }
-
+            Update update = new Update(Convert.ToInt32(id));
+            update.Show();
+            this.Hide();
         }
     }
 }
