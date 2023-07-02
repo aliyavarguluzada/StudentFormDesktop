@@ -57,5 +57,20 @@ namespace StudentFormDesktop
                 }
             }
         }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+                MessageBox.Show(id);
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Database is empty");
+            }
+
+        }
     }
 }

@@ -71,12 +71,14 @@
             dataGridView1.Size = new Size(776, 205);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+            dataGridView1.RowHeaderMouseDoubleClick += dataGridView1_RowHeaderMouseDoubleClick;
             // 
             // Column1
             // 
-            Column1.HeaderText = "ID";
+            Column1.HeaderText = "Id";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
+            Column1.Visible = false;
             Column1.Width = 125;
             // 
             // Column2
