@@ -41,6 +41,7 @@
             txbx_Update_Surname = new TextBox();
             txbx_Update_Name = new TextBox();
             label1 = new Label();
+            Delete_btn = new Button();
             SuspendLayout();
             // 
             // Update_btn
@@ -148,11 +149,21 @@
             label1.TabIndex = 25;
             label1.Text = "Name";
             // 
+            // Delete_btn
+            // 
+            Delete_btn.Location = new Point(532, 318);
+            Delete_btn.Name = "Delete_btn";
+            Delete_btn.Size = new Size(94, 29);
+            Delete_btn.TabIndex = 26;
+            Delete_btn.Text = "Delete";
+            Delete_btn.UseVisualStyleBackColor = true;
+            // 
             // Update
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(Delete_btn);
             Controls.Add(label1);
             Controls.Add(Update_btn);
             Controls.Add(label6);
@@ -168,6 +179,7 @@
             Controls.Add(txbx_Update_Name);
             Name = "Update";
             Text = "Update";
+            FormClosed += Update_FormClosed;
             Load += Update_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -188,5 +200,6 @@
         private TextBox txbx_Update_Surname;
         private TextBox txbx_Update_Name;
         private Label label1;
+        private Button Delete_btn;
     }
 }

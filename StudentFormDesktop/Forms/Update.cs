@@ -38,10 +38,17 @@ namespace StudentFormDesktop.Forms
             txbx_Update_Name.Text = updateStudent.Name;
             txbx_Update_Surname.Text = updateStudent.Surname;
             txbx_Update_Email.Text = updateStudent.Email;
+            txbx_Update_Address.Text = updateStudent.Address;
             txbx_Update_Faculty.Text = updateStudent.Faculty;
             txbx_Update_Profession.Text = updateStudent.Profession;
 
 
+        }
+
+        private void Update_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
         }
     }
 }

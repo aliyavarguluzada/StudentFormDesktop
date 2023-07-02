@@ -51,6 +51,7 @@ namespace StudentFormDesktop
                                            students[i].Name,
                                            students[i].Surname,
                                            students[i].Email,
+                                           students[i].Address,
                                            students[i].Faculty,
                                            students[i].Profession);
                 }
@@ -64,14 +65,14 @@ namespace StudentFormDesktop
                 string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                 MessageBox.Show(id);
+                Update update = new Update(Convert.ToInt32(id));
+                update.Show();
+                this.Hide();
             }
-            catch (NullReferenceException)
+            catch(NullReferenceException)
             {
                 MessageBox.Show("Database is empty");
             }
-            Update update = new Update(Convert.ToInt32(id));
-            update.Show();
-            this.Hide();
         }
     }
 }
