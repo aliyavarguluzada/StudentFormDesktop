@@ -16,7 +16,7 @@ namespace StudentFormDesktop.Data
         {
             Students = new List<Student>();
 
-            Student student = new Student();
+            //Student student = new Student();
 
             //student.Name = "ali";
             //student.Surname = "guluzada";
@@ -24,7 +24,7 @@ namespace StudentFormDesktop.Data
             //student.Email = "aliyavarguluzada@gmail.com";
             //student.Faculty = "IT";
             //student.Profession = "Software Engineer";
-            Students.Add(student);
+            //Students.Add(student);
         }
     }
 }

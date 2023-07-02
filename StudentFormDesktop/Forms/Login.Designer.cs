@@ -70,6 +70,7 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(776, 205);
             dataGridView1.TabIndex = 2;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // Column1
             // 
@@ -130,6 +131,9 @@
             Controls.Add(Register_Panel_btn);
             Name = "Login";
             Text = "Login";
+            Load += Login_Load;
+            Shown += Login_Shown;
+            VisibleChanged += Login_VisibleChanged;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
