@@ -52,6 +52,7 @@
             Update_btn.TabIndex = 24;
             Update_btn.Text = "Update";
             Update_btn.UseVisualStyleBackColor = true;
+            Update_btn.Click += Update_btn_Click;
             // 
             // label6
             // 

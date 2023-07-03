@@ -133,6 +133,7 @@
             Controls.Add(Register_Panel_btn);
             Name = "Login";
             Text = "Login";
+            FormClosed += Login_FormClosed;
             Load += Login_Load;
             Shown += Login_Shown;
             VisibleChanged += Login_VisibleChanged;

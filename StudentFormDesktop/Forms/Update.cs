@@ -32,9 +32,9 @@ namespace StudentFormDesktop.Forms
                 if (students[i].Id == Id)
                 {
                     updateStudent = students[i];
-                    //break;
+                    break;
                 }
-                break;
+
             }
             txbx_Update_Name.Text = updateStudent.Name;
             txbx_Update_Surname.Text = updateStudent.Surname;
@@ -42,8 +42,6 @@ namespace StudentFormDesktop.Forms
             txbx_Update_Address.Text = updateStudent.Address;
             txbx_Update_Faculty.Text = updateStudent.Faculty;
             txbx_Update_Profession.Text = updateStudent.Profession;
-            this.Close();
-
 
         }
 
@@ -54,6 +52,12 @@ namespace StudentFormDesktop.Forms
         }
 
         private void Delete_btn_Click(object sender, EventArgs e)
+        {
+             ApplicationDbContext.Students.Remove(updateStudent);
+            this.Close();
+        }
+
+        private void Update_btn_Click(object sender, EventArgs e)
         {
             updateStudent.Name = txbx_Update_Name.Text;
             updateStudent.Surname = txbx_Update_Surname.Text;

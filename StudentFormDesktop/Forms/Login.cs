@@ -25,7 +25,7 @@ namespace StudentFormDesktop
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -60,15 +60,39 @@ namespace StudentFormDesktop
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+            try
+            {
+
                 string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                 MessageBox.Show(id);
+
                 Update update = new Update(Convert.ToInt32(id));
                 update.Show();
                 this.Hide();
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show($"Database is empty {ex}");
+
+            }
+
+
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (StackOverflowException ex)
+            {
+                MessageBox.Show($"StackOverflowException {ex}");
+            }
             
             
+
         }
     }
 }
