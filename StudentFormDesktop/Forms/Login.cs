@@ -82,14 +82,7 @@ namespace StudentFormDesktop
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            try
-            {
-                this.Close();
-            }
-            catch (StackOverflowException ex)
-            {
-                MessageBox.Show($"StackOverflowException {ex}");
-            }
+            
             
             
 
