@@ -25,7 +25,7 @@ namespace StudentFormDesktop
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ;
+            
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -42,7 +42,6 @@ namespace StudentFormDesktop
         {
             if (this.Visible == true)
             {
-                List<Student> students = ApplicationDbContext.Students;
                 dataGridView1.Rows.Clear();
 
                 for (int i = 0; i < students.Count; i++)
@@ -54,25 +53,22 @@ namespace StudentFormDesktop
                                            students[i].Address,
                                            students[i].Faculty,
                                            students[i].Profession);
+                    break;
                 }
             }
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            try
-            {
+            
                 string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                 MessageBox.Show(id);
                 Update update = new Update(Convert.ToInt32(id));
                 update.Show();
                 this.Hide();
-            }
-            catch(NullReferenceException)
-            {
-                MessageBox.Show("Database is empty");
-            }
+            
+            
         }
     }
 }

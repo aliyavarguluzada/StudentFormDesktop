@@ -32,8 +32,9 @@ namespace StudentFormDesktop.Forms
                 if (students[i].Id == Id)
                 {
                     updateStudent = students[i];
-                    break;
+                    //break;
                 }
+                break;
             }
             txbx_Update_Name.Text = updateStudent.Name;
             txbx_Update_Surname.Text = updateStudent.Surname;
@@ -41,6 +42,7 @@ namespace StudentFormDesktop.Forms
             txbx_Update_Address.Text = updateStudent.Address;
             txbx_Update_Faculty.Text = updateStudent.Faculty;
             txbx_Update_Profession.Text = updateStudent.Profession;
+            this.Close();
 
 
         }
@@ -59,7 +61,7 @@ namespace StudentFormDesktop.Forms
             updateStudent.Address = txbx_Update_Address.Text;
             updateStudent.Faculty = txbx_Update_Faculty.Text;
             updateStudent.Profession = txbx_Update_Profession.Text;
-
+            this.Close();
         }
     }
 }
